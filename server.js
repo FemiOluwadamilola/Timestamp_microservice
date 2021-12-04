@@ -26,7 +26,7 @@ app.get("/api/hello", function (req, res) {
 
 app.get("/api/:date", function(req,res){
   const date_string = req.params.date;
-  res.json({unix: date_string, utc: new Date(date_string)})
+  res.json({unix: new Date().valueOf(date_string), utc: new Date().toUTCString(date_string)})
   // res.json({"error":"invalid Date"});
 })
 
